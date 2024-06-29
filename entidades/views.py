@@ -6,8 +6,24 @@ from .froms import *
 def home(request):
     return render(request, 'index.html')
 
+def tabladecomidas(request):
+    contexto = {"comidas": Comida.objects.all()}
+    return render(request, 'tabladecomidas.html', contexto)
+
 def buscadordecomidas(request):
-    return render(request, 'buscadordecomidas.html')
+    return render(request, 'buscadordecomidas.html',)
+
+
+
+def encontrarcomidas(request):
+    if request.GET ["buscar"]:
+        patron = request.GET["buscar"]
+        comida = Comida.objects.filter(nombre__icontains=patron)
+        contexto = {"comidas": comida}
+    else:
+        contexto = {"comidas": Comida.objects.all()}
+
+    return render(request, 'tabladecomidas.html', contexto)
 
 def pasantias(request):
     return render(request, 'registerpasantias.html')
@@ -68,5 +84,7 @@ def registercomidas(request):
         miForm = ComidasForm()
 
     return render(request, "registercomida.html", {"form": miForm})
+
+
 
         

@@ -10,4 +10,6 @@ urlpatterns = [
     path('exitosopasantia/', exitopasantia, name='exitopasantia'),
     path('adminregistercomidas/', registercomidas, name='registercomidas'),
     path('buscadordecomidas/', buscadordecomidas, name='buscadordecomidas'),
+    path('tabladecomidas/', tabladecomidas, name='tabladecomidas'),
+    path('encontrarcomidas/', encontrarcomidas, name='encontrarcomidas'),
 ]

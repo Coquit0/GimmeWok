@@ -2,9 +2,15 @@
 
 {% load static %}
 
-{% block contenidoquecambia %}
+{% block contenidoquecambia %}  
+<form action="{% url 'encontrarcomidas' %}" method="GET">
+    {% csrf_token %}
+    <table>
+        <p>Ingrese la comida solicitada: <input type="text" name="buscar" id="buscar"></p>
+    </table>
+    <input type="submit" value="Buscar">
+</form>
 
-    
     
 {% endblock contenidoquecambia %}
     
