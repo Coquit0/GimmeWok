@@ -1,0 +1,230 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block contenidoquecambia %}
+  
+<!-- Menu section -->
+<section id="menu" class="parallax-section">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
+         <div class="wow fadeInUp section-title" data-wow-delay="0.3s">
+            <h2>Menu</h2>
+            <h4>Tenemos una gran variedad de comida</h4>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-sm-12">
+        <div class="media wow fadeInUp" data-wow-delay="0.6s">
+          <div class="media-object pull-left">
+            <img src="{% static 'images/comida1.jfif' %}" class="img-responsive" alt="Food Menu">
+          </div>
+          <div class="media-body">
+            <h3 class="media-heading">Pionono</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elitquisque tempus ac eget diam et.</p>
+            <a href="{% url 'registerusuario' %}" class="btn btn-default hvr-bounce-to-bottom">Comprar</a>
+          </div>
+        </div>
+
+        <div class="media wow fadeInUp" data-wow-delay="0.9s">
+          <div class="media-object pull-left">
+            <img src="{% static 'images/comida2.jfif' %}" class="img-responsive" alt="Food Menu">
+          </div>
+          <div class="media-body">
+            <h3 class="media-heading">Barra de ensaladas</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elitquisque tempus ac eget diam et.</p>
+            <a href="{% url 'registerusuario' %}" class="btn btn-default hvr-bounce-to-bottom">Comprar</a>
+          </div>
+        </div>
+
+        <div class="media wow fadeInUp" data-wow-delay="1.2s">
+          <div class="media-object pull-left">
+            <img src="{% static 'images/comida3.jfif' %}" class="img-responsive" alt="Food Menu">
+          </div>
+          <div class="media-body">
+            <h3 class="media-heading">Matambre a la pizza</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elitquisque tempus ac eget diam et.</p>
+            <a href="{% url 'registerusuario' %}" class="btn btn-default hvr-bounce-to-bottom">Comprar</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="col-md-6 col-sm-12">
+        <div class="media wow fadeInUp" data-wow-delay="1s">
+          <div class="media-object pull-left">
+            <img src="{% static 'images/comida4.jfif' %}" class="img-responsive" alt="Food Menu">
+          </div>
+          <div class="media-body">
+            <h3 class="media-heading">Arroz Frito</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elitquisque tempus ac eget diam et.</p>
+            <a href="{% url 'registerusuario' %}" class="btn btn-default hvr-bounce-to-bottom">Comprar</a>
+          </div>
+        </div>
+
+        <div class="media wow fadeInUp" data-wow-delay="1.3s">
+          <div class="media-object pull-left">
+            <img src="{% url 'registerusuario' %}" class="img-responsive" alt="Food Menu">
+          </div>
+          <div class="media-body">
+            <h3 class="media-heading">Carne con verduras</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elitquisque tempus ac eget diam et.</p>
+            <a href="{% url 'registerusuario' %}" class="btn btn-default hvr-bounce-to-bottom">Comprar</a>
+          </div>
+        </div>
+
+        <div class="media wow fadeInUp" data-wow-delay="1.6s">
+          <div class="media-object pull-left">
+            <img src="{% url 'registerusuario' %}" class="img-responsive" alt="Food Menu">
+          </div>
+          <div class="media-body">
+            <h3 class="media-heading">Pollo con verduras</h3>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elitquisque tempus ac eget diam et.</p>
+            <a href="{% url 'registerusuario' %}" class="btn btn-default hvr-bounce-to-bottom">Comprar</a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Team section -->
+<section id="team" class="parallax-section">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-offset-2 col-md-8 col-sm-offset-1 col-sm-10">
+         <div class="wow fadeInUp section-title" data-wow-delay="0.3s">
+            <h2>Nuestro equipo</h2>
+            <h4>Somos especiatas en comidas de todo tipo</h4>
+        </div>
+      </div>
+
+      <div class="clearfix"></div>
+
+      <div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="0.4s">
+          <div class="team-thumb">
+            <img src="{% static 'images/chef1.jpeg' %}" class="img-responsive" alt="Team">  
+                <div class="team-des">
+                  <h3>Carlos</h3>
+                  <h4>Gerente</h4>
+                    <ul class="social-icon">
+                      <li><a href="#" class="fa fa-facebook"></a></li>
+                      <li><a href="#" class="fa fa-twitter"></a></li>
+                      <li><a href="#" class="fa fa-dribbble"></a></li>
+                    </ul>
+                </div>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="0.6s">
+          <div class="team-thumb">
+            <img src="{% static 'images/tino.jfif' %}" class="img-responsive" alt="Team">  
+              <div class="team-des">
+                <h3>Valentino</h3>
+                <h4>Co-Fundador</h4>
+                  <ul class="social-icon">
+                      <li><a href="#" class="fa fa-twitter"></a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="0.9s">
+          <div class="team-thumb">
+            <img src="{% static 'images/chef4.jpg' %}" class="img-responsive" alt="Team">  
+              <div class="team-des">
+                <h3>Walter</h3>
+                <h4>Senior Chef</h4>
+                  <ul class="social-icon">
+                      <li><a href="#" class="fa fa-facebook"></a></li>
+                      <li><a href="#" class="fa fa-twitter"></a></li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+
+      <div class="col-md-3 col-sm-6 wow fadeInUp" data-wow-delay="1.1s">
+          <div class="join-team">
+            <i class="fa fa-plus"></i>
+            <p>Aceptamos nuevos pasantes</p>
+            <a href="{% url 'registerpasantias' %}" class="btn btn-default hvr-bounce-to-bottom">Aplicar</a>
+          </div>
+      </div>
+
+      <div class="clearfix"></div>
+
+    </div>
+  </div>
+</section>
+
+{% endblock contenidoquecambia %}
+
+<!-- Footer section -->
+<footer>
+	<div class="container">
+		<div class="row">
+
+              <div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="1.3s">
+                <h3>Acerca de nosotros</h3>
+                <p>En GimmeWok, nos especializamos en ofrecer las más deliciosas y jugosas opciones de pollo rostizado. Desde nuestros comienzos, nos hemos dedicado a brindar a nuestros clientes una experiencia culinaria única, combinando ingredientes frescos con técnicas tradicionales para crear sabores inigualables.</p>
+              </div>  
+        
+              <div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="1.6s">
+                <h3>Ubicacion</h3>
+                <p>Al lado del kiosco, en frente del shopping y al lado de la pescaderia, en Liniers</p>
+                <p>111-11-1111</p>
+                <p>valentiawang@tino'scompany.com</p>
+              </div> 
+        
+              <div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="1.9s">
+                <h3>Abierto</h3>
+                <strong>Siempre</strong>
+              </div> 
+
+		</div>
+	</div>
+</footer>
+
+<!-- Copyright section -->
+<section id="copyright">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-8 col-sm-8 col-xs-8">
+        <p>Copyright © 2024 Tino's Company - Designed by Template de internet</p>
+      </div>  
+
+      <div class="col-md-4 col-sm-4 text-right">
+        <a href="#home" class="fa fa-angle-up smoothScroll gototop"></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- javscript js -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/jquery.magnific-popup.min.js"></script>
+
+<script src="js/jquery.sticky.js"></script>
+<script src="js/jquery.backstretch.min.js"></script>
+
+<script src="js/isotope.js"></script>
+<script src="js/imagesloaded.min.js"></script>
+<script src="js/nivo-lightbox.min.js"></script>
+
+<script src="js/jquery.flexslider-min.js"></script>
+
+<script src="js/jquery.parallax.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/wow.min.js"></script>
+
+<script src="js/custom.js"></script>
+
+</body>
+</html>

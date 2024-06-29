@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  {% load static %}
+	<title>GimmeWok</title>
+<!--
+
+Template 2083 Steak House
+
+http://www.tooplate.com/view/2083-steak-house
+
+-->
+  	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="">
+  	<meta name="description" content="">
+
+	<!-- stylesheets css -->
+  <link rel="stylesheet" href="{% static 'css/login.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+
+  	<link rel="stylesheet" href="{% static 'css/magnific-popup.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/animate.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/font-awesome.min.css' %}">
+
+  	<link rel="stylesheet" href="{% static 'css/nivo-lightbox.css' %}">
+  	<link rel="stylesheet" href="{% static 'css/nivo_themes/default/default.css' %}">
+
+  	<link rel="stylesheet" href="{% static 'css/hover-min.css' %}">
+  	<link rel="stylesheet" href="{% static 'css/flexslider.css' %}">
+
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+
+  	<link href='https://fonts.googleapis.com/css?family=Montserrat:400,700' rel='stylesheet' type='text/css'>
+  	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,300,600' rel='stylesheet' type='text/css'>
+
+</head>
+<body id="top" data-spy="scroll" data-target=".navbar-collapse" data-offset="50">
+
+
+    <!-- Home section -->
+    <section id="home" class="parallax-section">
+      <div class="gradient-overlay"></div>
+        <div class="container">
+          <div class="row">
+    
+              <div class="col-md-offset-2 col-md-8 col-sm-12">
+                  <h1 class="wow fadeInUp" data-wow-delay="0.6s">GimmeWok</h1>
+                  <p class="wow fadeInUp" data-wow-delay="1.0s">Taiwan en Liniers</p>
+              </div>
+    
+          </div>
+        </div>
+    </section>
+
+    <!-- Navigation section -->
+<div class="navbar navbar-default navbar-static-top" role="navigation">
+    <div class="container">
+  
+      <div class="navbar-header">
+        <button class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+          <span class="icon icon-bar"></span>
+        </button>
+        <a href="#" class="navbar-brand">GimmeWok</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="{% url 'home' %}" class="smoothScroll">Inicio</a></li>
+          <li><a href="{% url 'buscadordecomidas' %}" class="smoothScroll">Buscador de comidas</a></li>
+          <li><a href="{% url 'registerpasantias' %}" class="smoothScroll">Pasantias</a></li>
+        </ul>
+      </div>
+  
+    </div>
+  </div>
+
+    {% block contenidoquecambia %}
+  
+    {% endblock contenidoquecambia %}
+
+</body>
+
+
+<!-- Footer section -->
+<footer>
+	<div class="container">
+		<div class="row">
+
+              <div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="1.3s">
+                <h3>Acerca de nosotros</h3>
+                <p>En GimmeWok, nos especializamos en ofrecer las más deliciosas y jugosas opciones de pollo rostizado. Desde nuestros comienzos, nos hemos dedicado a brindar a nuestros clientes una experiencia culinaria única, combinando ingredientes frescos con técnicas tradicionales para crear sabores inigualables.</p>
+              </div>  
+        
+              <div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="1.6s">
+                <h3>Ubicacion</h3>
+                <p>Al lado del kiosco, en frente del shopping y al lado de la pescaderia, en Liniers</p>
+                <p>111-11-1111</p>
+                <p>valentiawang@tino'scompany.com</p>
+              </div> 
+        
+              <div class="wow fadeInUp col-md-4 col-sm-4" data-wow-delay="1.9s">
+                <h3>Abierto</h3>
+                <strong>Siempre</strong>
+              </div> 
+
+		</div>
+	</div>
+</footer>
+
+<!-- Copyright section -->
+<section id="copyright">
+  <div class="container">
+    <div class="row">
+
+      <div class="col-md-8 col-sm-8 col-xs-8">
+        <p>Copyright © 2024 Tino's Company - Designed by Template de internet</p>
+      </div>  
+
+      <div class="col-md-4 col-sm-4 text-right">
+        <a href="#home" class="fa fa-angle-up smoothScroll gototop"></a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- javscript js -->
+<script src="js/jquery.js"></script>
+<script src="js/bootstrap.min.js"></script>
+
+<script src="js/jquery.magnific-popup.min.js"></script>
+
+<script src="js/jquery.sticky.js"></script>
+<script src="js/jquery.backstretch.min.js"></script>
+
+<script src="js/isotope.js"></script>
+<script src="js/imagesloaded.min.js"></script>
+<script src="js/nivo-lightbox.min.js"></script>
+
+<script src="js/jquery.flexslider-min.js"></script>
+
+<script src="js/jquery.parallax.js"></script>
+<script src="js/smoothscroll.js"></script>
+<script src="js/wow.min.js"></script>
+
+<script src="js/custom.js"></script>
+
+</body>
+</html>
