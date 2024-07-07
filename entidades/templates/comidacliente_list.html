@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block contenidoquecambia %}  
+
+<table>
+
+    <tr>
+
+        <td width="200"><h2>Comidas</h2></td>       
+
+    </tr>
+
+</table>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Comida</th>
+
+                <th>Ingredientes</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            {% for c in object_list %}
+                <tr>
+                    <th>{{c.nombre}}</th>
+
+                    <th>{{c.ingredientes}}</th>
+                </tr>            
+                
+            {% endfor %}
+                
+        </tbody>
+    </table>
+
+
+{% endblock contenidoquecambia %}

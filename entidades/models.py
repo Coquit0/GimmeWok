@@ -8,6 +8,9 @@ class Clientes(models.Model):
     dni = models.IntegerField()
     edad = models.IntegerField()
 
+    def __str__(self):
+        return f"{self.nombre} {self.apellido}"
+
 class Empleados(models.Model):
     nombre = models.CharField(max_length=40)
     apellido = models.CharField(max_length=40)
@@ -16,7 +19,14 @@ class Empleados(models.Model):
     edad = models.IntegerField()
     puesto = models.CharField(max_length=20)
 
+    def __str__(self):
+        return f"{self.nombre} {self.apellido}"
+
 class Comida(models.Model):
     nombre = models.CharField(max_length=40)
     ingredientes = models.CharField(max_length=100)
+
+    def __str__(self):
+        return f"{self.nombre}"
+    
     

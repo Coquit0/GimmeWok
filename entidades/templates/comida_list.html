@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block contenidoquecambia %}  
+
+<table>
+
+    <tr>
+
+        <td width="200"><h2>Comidas</h2></td>
+
+        <td>
+
+            <a
+
+            href="{% url 'comidascreate' %}"
+
+            class="btn btn-primary btn-sm"
+
+            ><i class="fa fa-plus fa-lg" title="Crear"> </i>
+
+            </a>
+
+        </td>        
+
+    </tr>
+
+</table>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Comida</th>
+
+                <th>Ingredientes</th>
+
+                <th>Acciones</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            {% for c in object_list %}
+                <tr>
+                    <th>{{c.nombre}}</th>
+
+                    <th>{{c.ingredientes}}</th>
+
+                    <td>
+
+                        <a
+        
+                          href="{% url 'comidasupdate' c.id %}"
+        
+                          class="btn btn-primary"
+        
+                          style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+        
+                          ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+        
+                        </a>
+        
+                        <a
+        
+                          href="{% url 'comidasdelete' c.id %}"
+        
+                          class="btn btn-danger"
+        
+                          style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+        
+                          ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+        
+                        </a>                
+        
+                    </td>
+                </tr>            
+                
+            {% endfor %}
+                
+        </tbody>
+    </table>
+
+
+{% endblock contenidoquecambia %}

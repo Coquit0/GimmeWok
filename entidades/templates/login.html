@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block contenidoquecambia %}  
+
+<form action="" method="post">
+
+    {% csrf_token %}
+
+    <table>
+
+        {{ form.as_table }}
+
+    </table>
+
+    <input type="submit" value="Login">
+
+</form>
+
+<p>Si no estas registrado que estas esperando? <a a href="{% url 'register' %}">Registrarse</a></p>
+{% endblock contenidoquecambia %}

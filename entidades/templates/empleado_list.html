@@ -1,0 +1,98 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block contenidoquecambia %}  
+
+<table>
+
+    <tr>
+
+        <td width="200"><h2>Empleados</h2></td>
+
+        <td>
+
+            <a
+
+            href="{% url 'empleadoscreate' %}"
+
+            class="btn btn-primary btn-sm"
+
+            ><i class="fa fa-plus fa-lg" title="Crear"> </i>
+
+            </a>
+
+        </td>        
+
+    </tr>
+
+</table>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Nombre</th>
+
+                <th>Apellido</th>
+
+                <th>Direccion</th>
+
+                <th>Dni</th>
+
+                <th>Edad</th>
+
+                <th>Puesto</th>
+            </tr>
+        </thead>
+        <tbody>
+            
+            {% for c in object_list %}
+                <tr>
+                    <th>{{c.nombre}}</th>
+
+                    <th>{{c.apellido}}</th>
+
+                    <th>{{c.direccion}}</th>
+
+                    <th>{{c.dni}}</th>
+
+                    <th>{{c.edad}}</th>
+
+                    <th>{{c.puesto}}</th>
+
+                    <td>
+
+                        <a
+        
+                          href="{% url 'empleadosupdate' c.id %}"
+        
+                          class="btn btn-primary"
+        
+                          style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+        
+                          ><i class="fa fa-edit fa-sm" title="Edit Record"></i>
+        
+                        </a>
+        
+                        <a
+        
+                          href="{% url 'empleadosdelete' c.id %}"
+        
+                          class="btn btn-danger"
+        
+                          style="--bs-btn-padding-y: .25rem; --bs-btn-padding-x: .5rem; --bs-btn-font-size: .75rem;"
+        
+                          ><i class="fa fa-trash fa-sm" title="Delete Record"></i>
+        
+                        </a>                
+        
+                    </td>
+                </tr>            
+                
+            {% endfor %}
+                
+        </tbody>
+    </table>
+
+
+{% endblock contenidoquecambia %}
