@@ -11,10 +11,17 @@ from django.contrib.auth.forms import AuthenticationForm
 from django.contrib.auth import logout
 from django.contrib.auth.mixins import LoginRequiredMixin
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.views import PasswordChangeView
 # Create your views here.
 def home(request):
     return render(request, 'index.html')
 
+#NAV
+
+def acercademi(request):
+    return render(request, 'acercademi.html')
+
+@login_required
 def buscadordecomidas(request):
     return render(request, 'buscadordecomidas.html',)
 
@@ -29,6 +36,7 @@ def encontrarcomidas(request):
 
     return render(request, 'tabladecomidas.html', contexto)
 
+@login_required
 def tabladecomidas(request):
     contexto = {"comidas": Comida.objects.all()}
     return render(request, 'tabladecomidas.html', contexto)
@@ -44,7 +52,7 @@ def exito(request):
 def exitopasantia(request):
         return render(request, 'exitopasantia.html')
 
-#Formulario
+#Formulario Pasantias
 @login_required
 def registerpasantias(request):
     if request.method == "POST":
@@ -138,6 +146,29 @@ class EmpleadosDelete(LoginRequiredMixin, DeleteView):
     template_name="empleadoDelete.html"
     success_url = reverse_lazy("empleados")
 
+#Tareas
+
+class TareasList(LoginRequiredMixin, ListView):
+    model = Tareas
+    template_name="tareas_list.html"
+
+class TareasCreate(LoginRequiredMixin ,CreateView):
+    model = Tareas
+    fields = ["nombre", "descripcion"]
+    template_name="tareasCreate.html"
+    success_url = reverse_lazy("tareas")
+
+class TareasUpdate(LoginRequiredMixin, UpdateView):
+    model = Tareas
+    fields = ["nombre", "descripcion"]
+    template_name="tareasUpdate.html"
+    success_url = reverse_lazy("tareas")
+
+class TareasDelete(LoginRequiredMixin, DeleteView):
+    model = Tareas
+    template_name="tareasDelete.html"
+    success_url = reverse_lazy("tareas")
+
 
 
 #Login
@@ -149,6 +180,13 @@ def loginEntrar(request):
         user = authenticate(request, username=usuario, password=clave)
         if user is not None:
             login(request, user)
+            try:
+                avatar = Avatar.objects.get(user=request.user.id).imagen.url
+            except:
+                avatar = "/media/avatares/default.JPG"
+            finally:
+                request.session["avatar"] = avatar
+            
             return render(request, "index.html")
         else:
             return redirect(reverse_lazy('login'))
@@ -174,6 +212,54 @@ def register(request):
 def logout_view(request):
     logout(request) 
     return render(request, "index.html")
+
+#Editor de usuario y Avatar
+
+@login_required
+def editarPerfil(request):
+    usuario = request.user
+    if request.method == "POST":
+        miForm = EditarPerfilForm(request.POST)
+        if miForm.is_valid():
+            user = User.objects.get(username=usuario)
+            user.email = miForm.cleaned_data.get("email")
+            user.first_name = miForm.cleaned_data.get("first_name")
+            user.last_name = miForm.cleaned_data.get("last_name")
+            user.save()
+            return redirect(reverse_lazy("home"))
+    else:
+        miForm = EditarPerfilForm(instance=usuario)
+
+    return render(request, 'editarPerfil.html', {"form": miForm})
+
+class CambiarClave(LoginRequiredMixin, PasswordChangeView):
+    template_name = "cambiarclave.html"
+    success_url = reverse_lazy('home')
+
+@login_required
+def agregarAvatar(request):
+    if request.method == "POST":
+        miForm = AvatarForm(request.POST, request.FILES)
+        if miForm.is_valid():
+            usuario = User.objects.get(username=request.user)
+            imagen = miForm.cleaned_data["imagen"]
+            avatarViejo = Avatar.objects.filter(user=usuario)
+            if len(avatarViejo) > 0:
+                for i in range(len(avatarViejo)):
+                    avatarViejo[i].delete()
+            avatar = Avatar(user=usuario, imagen=imagen)
+            avatar.save()
+            imagen = Avatar.objects.get(user=usuario).imagen.url
+            request.session["avatar"] = imagen
+            return redirect(reverse_lazy("home"))
+    else:
+        miForm = AvatarForm()
+
+    return render(request, 'agregaravatar.html', {"form": miForm})
+    
+
+
+
 
 
         
